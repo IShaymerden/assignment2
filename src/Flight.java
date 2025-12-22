@@ -3,11 +3,13 @@ public class Flight {
     private String destination;
     private int capacity;
 
+
     public Flight(String flightNumber, String destination, int capacity) {
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.capacity = capacity;
     }
+
 
     public String getFlightNumber() {
         return flightNumber;
@@ -33,14 +35,13 @@ public class Flight {
         this.capacity = capacity;
     }
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightNumber='" + flightNumber + '\'' +
-                ", destination='" + destination + '\'' +
-                ", capacity=" + capacity +
-                '}';
+
+    public void displayInfo() {
+        System.out.println("Flight: " + flightNumber +
+                ", Destination: " + destination +
+                ", Capacity: " + capacity);
     }
 }
+
 
 

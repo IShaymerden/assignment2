@@ -1,12 +1,22 @@
 public class Reservation {
-    private Passenger passenger;
     private Flight flight;
+    private Passenger passenger;
     private String seatNumber;
 
-    public Reservation(Passenger passenger, Flight flight, String seatNumber) {
-        this.passenger = passenger;
+
+    public Reservation(Flight flight, Passenger passenger, String seatNumber) {
         this.flight = flight;
+        this.passenger = passenger;
         this.seatNumber = seatNumber;
+    }
+
+    // Getters and Setters
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
     public Passenger getPassenger() {
@@ -17,14 +27,6 @@ public class Reservation {
         this.passenger = passenger;
     }
 
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
-
     public String getSeatNumber() {
         return seatNumber;
     }
@@ -33,13 +35,13 @@ public class Reservation {
         this.seatNumber = seatNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "passenger=" + passenger +
-                ", flight=" + flight +
-                ", seatNumber='" + seatNumber + '\'' +
-                '}';
+
+    public void displayInfo() {
+        System.out.println("Reservation:");
+        passenger.displayInfo();
+        flight.displayInfo();
+        System.out.println("Seat: " + seatNumber);
     }
 }
+
 
