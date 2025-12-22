@@ -2,7 +2,7 @@ public class Passenger {
     private String name;
     private String passportNumber;
 
-    public Passenger(String name, String passportNumber){
+    public Passenger(String name, String passportNumber) {
         this.name = name;
         this.passportNumber = passportNumber;
     }
@@ -17,14 +17,18 @@ public class Passenger {
 
     public String getPassportNumber() {
         return passportNumber;
-        //hhh
     }
 
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
-    public void displayInfo() {
-        System.out.println("Passenger: " + name +
-                ", Passport: " + passportNumber);
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "name='" + name + '\'' +
+                ", passportNumber='" + passportNumber + '\'' +
+                '}';
     }
 }
+
