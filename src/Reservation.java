@@ -10,7 +10,7 @@ public class Reservation {
         this.seatNumber = seatNumber;
     }
 
-    // Getters and Setters
+
     public Flight getFlight() {
         return flight;
     }
