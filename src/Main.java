@@ -35,6 +35,8 @@ public class Main {
         }
 
 
+
+
         if (reservation1.getSeatNumber().compareTo(reservation2.getSeatNumber()) > 0) {
             System.out.println("Reservation with higher seat number: " + reservation1.getSeatNumber());
         } else {

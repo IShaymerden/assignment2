@@ -26,6 +26,8 @@ public class Passenger extends Person {
         return Objects.equals(passportNumber, p.passportNumber);
     }
 
+
+
     @Override
     public int hashCode() {
         return Objects.hash(passportNumber);

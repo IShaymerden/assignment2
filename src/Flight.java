@@ -7,6 +7,7 @@ public class Flight implements Comparable<Flight> {
     private String destination;
     private int capacity;
 
+
     public Flight(String flightNumber, String destination, int capacity) {
         this.flightNumber = flightNumber;
         this.destination = destination;
