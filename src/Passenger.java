@@ -1,33 +1,33 @@
-public class Passenger {
-    private String name;
+package entities;
+
+import java.util.Objects;
+
+public class Passenger extends Person {
     private String passportNumber;
 
-
     public Passenger(String name, String passportNumber) {
-        this.name = name;
+        super(name);
         this.passportNumber = passportNumber;
     }
 
+    public String getPassportNumber() { return passportNumber; }
+    public void setPassportNumber(String passportNumber) { this.passportNumber = passportNumber; }
 
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return "Passenger: " + getName() + ", Passport: " + passportNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Passenger)) return false;
+        Passenger p = (Passenger) o;
+        return Objects.equals(passportNumber, p.passportNumber);
     }
 
-    public String getPassportNumber() {
-        return passportNumber;
-    }
-
-    public void setPassportNumber(String passportNumber) {
-        this.passportNumber = passportNumber;
-    }
-
-
-    public void displayInfo() {
-        System.out.println("Passenger: " + name +
-                ", Passport: " + passportNumber);
+    @Override
+    public int hashCode() {
+        return Objects.hash(passportNumber);
     }
 }

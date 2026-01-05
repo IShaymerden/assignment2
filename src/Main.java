@@ -1,39 +1,28 @@
+import entities.*; // Импортируем классы из твоего пакета entities
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
+        List<Flight> flightPool = new ArrayList<>();
+        flightPool.add(new Flight("KC101", "Almaty", 180));
+        flightPool.add(new Flight("KC102", "Astana", 220));
+        flightPool.add(new Flight("KC103", "Astana", 150));
 
-        Flight flightAlmaty = new Flight("KC101", "Almaty", 180);
-        Flight flightAstana = new Flight("KC102", "Astana", 220);
-
-        Passenger passenger1 = new Passenger("Ali Nur", "KZ123456");
-        Passenger passenger2 = new Passenger("Dana Kim", "KZ654321");
-
-        Reservation reservation1 = new Reservation(flightAlmaty, passenger1, "12A");
-        Reservation reservation2 = new Reservation(flightAstana, passenger2, "18C");
-
-        reservation1.displayInfo();
-        System.out.println();
-        reservation2.displayInfo();
-
-        System.out.println("\n--- Comparisons ---");
-
-        if (flightAlmaty.getCapacity() > flightAstana.getCapacity()) {
-            System.out.println("Flight with larger capacity: " + flightAlmaty.getDestination());
-        } else {
-            System.out.println("Flight with larger capacity: " + flightAstana.getDestination());
+        System.out.println("--- Searching: Astana ---");
+        for (Flight f : flightPool) {
+            if (f.getDestination().equalsIgnoreCase("Astana")) {
+                System.out.println(f);
+            }
         }
 
-        if (passenger1.getName().length() > passenger2.getName().length()) {
-            System.out.println("Passenger with longer name: " + passenger1.getName());
-        } else {
-            System.out.println("Passenger with longer name: " + passenger2.getName());
-        }
+        System.out.println("\n--- Sorting: By Capacity ---");
+        Collections.sort(flightPool);
+        flightPool.forEach(System.out::println);
 
-        if (reservation1.getSeatNumber().compareTo(reservation2.getSeatNumber()) > 0) {
-            System.out.println("Reservation with higher seat number: " + reservation1.getSeatNumber());
-        } else {
-            System.out.println("Reservation with higher seat number: " + reservation2.getSeatNumber());
-        }
+        System.out.println("\n--- Comparison Test ---");
+        Passenger p1 = new Passenger("Ali Nur", "KZ123");
+        Passenger p2 = new Passenger("Ali Nur", "KZ123");
+        System.out.println(p1);
+        System.out.println("Are p1 and p2 equal? " + p1.equals(p2));
     }
 }
-
-
