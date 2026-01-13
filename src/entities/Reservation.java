@@ -11,7 +11,6 @@ public class Reservation {
         this.seatNumber = seatNumber;
     }
 
-    // ЭТОТ МЕТОД НУЖЕН, ЧТОБЫ ОШИБКА В MAIN ИСЧЕЗЛА
     public String getSeatNumber() {
         return seatNumber;
     }
